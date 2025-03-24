@@ -81,10 +81,14 @@ WSGI_APPLICATION = 'DjangoCourse5PushAppToHerokuWebHost.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
     }
 }
+
+DATABASES['default'] = dj_database_url.config(default='postgres://u44nrlbtdeaht5:pa4f2ea48b70cb39c137b89429d32b2f2067bc4cbe5c88d71461c544faa89a766@c9pv5s2sq0i76o.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com:5432/d7h4lohguvosl9')
+
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 
 # Password validation

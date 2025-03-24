@@ -42,7 +42,7 @@
 		<form method="POST" action="{% url 'delete' get_address.id %}">
 			{% csrf_token %}
 			<input type="hidden" value="{{ get_address.id }}" name="id">
-			<button type="submit" class="btn btn-secondary">Delete Address</button>
+			<button type="submit" class="btn btn-danger">Delete Address</button>
 		</form>
 
 	{% endif %}

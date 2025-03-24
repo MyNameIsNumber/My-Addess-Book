@@ -1,5 +1,35 @@
 {% extends 'base.html' %}
 
 {% block content %}
-	<h1>Add Address </h1>
+
+	<h1>Add Address</h1>
+	<br/>
+
+	<form method="POST">
+		{% csrf_token %}
+	  	<div class="mb-3"> <!-- Full Name -->
+	    	<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Full Name" name="name">
+	  	</div>
+	  	<div class="mb-3"> <!-- Email Address -->
+	    	<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Email Address" name="email">
+	  	</div>
+	  	<div class="mb-3"> <!-- Phone Number -->
+	    	<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone Number" name="phone">
+	  	</div>
+	  	<div class="mb-3"> <!-- First Line of Address -->
+	    	<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="First Line of Address" name="address_first_line">
+	  	</div>
+	  	<div class="mb-3"> <!-- Second Line of Address -->
+	    	<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Second Line of Address" name="address_second_line">
+	  	</div>
+	  	<div class="mb-3"> <!-- Town -->
+	    	<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Town/City" name="town">
+	  	</div>
+	  	<div class="mb-3"> <!-- Post/Zipcode -->
+	    	<input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Post/Zipcode" name="postcode">
+	  	</div>
+		<br/>
+	  	<button type="submit" class="btn btn-secondary">Add Address</button> <!-- Submit Button -->
+	</form>
+
 {% endblock %}

@@ -1,0 +1,1 @@
+web: gunicorn DjangoCourse5PushAppToHerokuWebHost.wsgi
